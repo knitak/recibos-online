@@ -1,8 +1,13 @@
-<% provide(:title, 'Home') %>
+<div class="center hero-unit">
 
-<h1>Bem Vindo a Recibos Online</h1>
+	<h1>Bem Vindo a Recibos Online</h1>
 
-<p>
-	Esta é a página de entrada de
-	<a href=" http://www.recibo.pt">Recibos Online</a>.
-</p>	
+	<h2>
+		Esta é a página de entrada de
+		<a href=" http://www.recibo.pt">Recibos Online</a>.
+	</h2>
+
+	<%= link_to "Shops", shops_path, class: "btn btn-large btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>	

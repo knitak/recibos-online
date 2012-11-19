@@ -2,41 +2,23 @@ require 'spec_helper'
 
 describe "StaticPages" do
 
-  describe "Home page" do
+	subject  { page }
 
-    it "should have the h1 'Recibos Online'" do
-      visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Recibos Online')
+  	describe "Home page" do
+  		before { visit root_path }
+
+    	it { should have_selector('h1', text: 'Recibos Online') }
+
+    	it { should have_selector('title', text: full_title('')) }
+
+    	it { should_not have_selector 'title', text: '| Home' }
     end
 
-    it "should have the base title" do
-      visit '/static_pages/home'
-      page.should have_selector('title',
-                        :text => "Recibos Online")
+  	describe "Contactos page" do
+  		before { visit contactos_path }
+
+    	it { should have_selector('h1', text: 'Contactos') }
+
+  		it { should have_selector('title', text: full_title('Contactos')) }
     end
-
-    it "should not have a custom page title" do
-      visit '/static_pages/home'
-      page.should_not have_selector('title', :text => '| Home')
-    end
-  end
-
-  describe "Contactos page" do
-
-    it "should have the h1 'Contactos'" do
-      visit '/static_pages/contactos'
-      page.should have_content('Contactos')
-  	end
-
-  	it "should have the base title" do
-      visit '/static_pages/contactos'
-      page.should have_selector('title',
-                        :text => "Contactos")
-    end
-
-    it "should not have a custom page title" do
-      visit '/static_pages/contactos'
-      page.should_not have_selector('title', :text => '| Contactos')
-    end
-  end
 end
