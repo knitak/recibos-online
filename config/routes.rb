@@ -1,5 +1,5 @@
 RecibosOnline::Application.routes.draw do
-  get "shops/new"
+  resources :shops
 
   #match '/', to: 'static_pages#home'
   root to: 'static_pages#home'

@@ -1,3 +1,20 @@
 <% provide(:title, 'Shops') %>
 <h1>Shops</h1>
-<p>Find me in app/views/shops/new.html.erb</p>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@shop) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+
+      <%= f.label :postalcode %>
+      <%= f.text_field :postalcode %>
+
+      <%= f.submit "Novo Registo", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
