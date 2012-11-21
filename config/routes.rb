@@ -1,5 +1,6 @@
 RecibosOnline::Application.routes.draw do
   resources :shops
+  resources :sessions, only: [:new, :create, :destroy]
 
   #match '/', to: 'static_pages#home'
   root to: 'static_pages#home'
@@ -7,7 +8,9 @@ RecibosOnline::Application.routes.draw do
 
   match '/contactos', to: 'static_pages#contactos'
 
-  match '/shops', to: "shops#new"
+  match '/shops', to: 'shops#new'
+  match '/pesquisa', to: 'sessions#new'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
   	@shop = Shop.new(params[:shop])
   	if @shop.save
       flash[:success] = "Bem vindo/a a Recibos Online"
-  		redirect_to @shop
+  		redirect_to show
   	else
   		render 'new'
   	end 	
