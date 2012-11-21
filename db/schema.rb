@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119121452) do
+ActiveRecord::Schema.define(:version => 20121121140513) do
 
   create_table "shops", :force => true do |t|
     t.string   "name"
@@ -20,5 +20,8 @@ ActiveRecord::Schema.define(:version => 20121119121452) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  #add_index "shops", ["id"], :name => "index_shops_on_id", :unique => true
+  add_index "shops", ["name"], :name => "index_shops_on_name"
 
 end

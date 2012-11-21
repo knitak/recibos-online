@@ -8,8 +8,9 @@ RecibosOnline::Application.routes.draw do
 
   match '/contactos', to: 'static_pages#contactos'
 
-  match '/shops', to: 'shops#new'
+  match '/shops', to: 'shops#index'
   match '/pesquisa', to: 'sessions#new'
+  match '/lojas', to: 'shops#show'
 
 
   # The priority is based upon order of creation:
